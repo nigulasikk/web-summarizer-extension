@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "网页内容总结插件",
+  "version": "1.0",
+  "description": "使用本地部署的ollama服务中的qwen2模型总结网页内容",
+  "permissions": ["activeTab", "scripting"
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
